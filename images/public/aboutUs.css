@@ -1,0 +1,90 @@
+/* 🔹 General Page Styling */
+body {
+  font-family: Tahoma;
+  background: linear-gradient(to bottom right, #f9f9f9, #f1f1f1);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔹 Content Wrapper */
+#content {
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+  padding: 20px;
+}
+
+#content > h1 {
+  text-decoration: underline;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Info Sections */
+.info {
+  margin: 30px auto;
+  max-width: 900px;
+  text-align: justify;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Info Box (History, Team, Office, etc.) */
+#info-box {
+  border: 1px solid #444;
+  padding: 30px;
+  width: fit-content;
+  margin: 40px auto;
+  line-height: 28px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(13, 44, 47, 0.25);
+  background: linear-gradient(to right, #e6e6e6, #fefefe);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#info-box h2 {
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#info-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Lists */
+#info-box ul,
+#special ul {
+  list-style-type: "✔ ";
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+#special,
+#promise {
+  text-align: start;
+}
+
+#special h3,
+#promise h3 {
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #0077b6;
+  padding-left: 10px;
+}
+
+
