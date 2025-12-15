@@ -26,11 +26,12 @@ document.getElementById("consultationForm").addEventListener("submit", async fun
   };
 
   try {
-    const res = await fetch("/api/send-consultation", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch("https://shivam-backend-1.onrender.com/api/send-consultation", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, phone, product })
+});
+
 
     const data = await res.json();
     alert(data.message);
