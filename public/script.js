@@ -3,42 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const div = document.getElementById("navbar");
 
   btn.addEventListener("click", () => {
-    if (div.style.display === "none" || div.style.display === "") {
-      // If hidden, show it
-      div.style.display = "block";
-    } else {
-      // If visible, hide it
-      div.style.display = "none";
+    div.style.display = div.style.display === "block" ? "none" : "block";
+  });
+
+  // form mail system
+  const form = document.getElementById("consultationForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById("form_name").value,
+      phone: document.getElementById("phone").value,
+      product: document.getElementById("product").value,
+    };
+
+    try {
+      const res = await fetch(
+        "https://shivam-backend-1.onrender.com/api/send-consultation",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData), // ✅ FIX
+        }
+      );
+
+      const data = await res.json();
+      alert(data.message);
+      form.reset(); // clear form
+    } catch (err) {
+      alert("❌ Something went wrong. Please try again.");
+      console.error(err);
     }
   });
-});
-
-
-//form mail system 
-
-document.getElementById("consultationForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const formData = {
-    name: document.getElementById("form_name").value,
-    phone: document.getElementById("phone").value,
-    product: document.getElementById("product").value,
-  };
-
-  try {
-    const res = await fetch("https://shivam-backend-1.onrender.com/api/send-consultation", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ name, phone, product })
-});
-
-
-    const data = await res.json();
-    alert(data.message);
-  } catch (err) {
-    alert("❌ Something went wrong. Please try again.");
-  }
-
-  // clear the form
-    this.reset();
 });
