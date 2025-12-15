@@ -23,7 +23,6 @@ document.getElementById("consultationForm").addEventListener("submit", async fun
     name: document.getElementById("form_name").value,
     phone: document.getElementById("phone").value,
     product: document.getElementById("product").value,
-    address: document.getElementById("address").value,
   };
 
   try {
